@@ -17,6 +17,22 @@ This PowerShell script is designed to retrieve SNMP data from networked printers
    ```powersershell
    .\PrinterSNMPManagement.ps1
 
+## Troubleshooting
+
+   - **Script Fails to Run:** Check PowerShell execution policies allow script execution (Set-ExecutionPolicy may be needed).
+   - **No Data Collected:** Verify network connectivity to the printer and correctness of the SNMP OIDs.
+   -**Incorrect Output:** Double-check SNMP community strings and IP addresses.
+
+## Own modifikation
+
+   - **Changes:** You can make changes to the Script as you want.
+   - **Get OIDs:** Verify network connectivity to the printer and correctness of the SNMP OIDs.
+     ```powershell
+     Invoke-SnmpWalk -IP IP-Address -Community public -OIDStart 1.3.6.1.4.1.18334.1.1.1.5.7.2 //For others you need to change the OID Start like 1.3.6.1.4.1.18334.1.1.1
+     //Find the OIDs for your Printer
+
+## Support
+For additional help or to report issues, please open an issue on the project repository or contact your network administrator.
 
 ### Notes on the README
 
