@@ -77,39 +77,8 @@ foreach ($device in $devices) {
 # Display the collected output
 $output | Format-Table -AutoSize
 
-# Function to create a fully quoted CSV
-function ConvertTo-QuotedCSV {
-    param(
-        [Parameter(ValueFromPipeline=$true)]
-        $InputObject
-    )
-
-    begin {
-        $output = New-Object System.Text.StringBuilder
-        $first = $true
-    }
-    process {
-        if ($first) {
-            # Get property names and add quotes around each
-            $header = ($InputObject | Get-Member -MemberType NoteProperty).Name |
-                      ForEach-Object { "`"$_`"" }
-            [void]$output.AppendLine(($header -join ","))
-            $first = $false
-        }
-        # Process each property value, adding quotes and escaping existing quotes
-        $data = $InputObject.PSObject.Properties.Value |
-                ForEach-Object { 
-                    $value = $_ -replace '"', '""'  # Escape quotes in data
-                    "`"$value`""  # Enclose data in quotes
-                }
-        [void]$output.AppendLine(($data -join ","))
-    }
-    end {
-        return $output.ToString()
-    }
-}
 
 $Date = Get-Date -Format "yyyy-MM"
 $Path = 'C:\temp\Printercounts_' + $Date + '.csv'
 # Export the output to a CSV file with specified headers
-$output | ConvertTo-QuotedCSV | Set-Content -Path $Path
+$output | Export-Csv -Path $Path -NoTypeInformation
