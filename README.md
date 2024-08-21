@@ -42,12 +42,3 @@ This PowerShell script is designed to retrieve SNMP data from networked printers
 
 ## Support
 For additional help or to report issues, please open an issue on the project repository or contact your network administrator.
-
-### Notes on the README
-
-- **Clear and Concise**: Provides all necessary information without overwhelming the user.
-- **Structured**: Organized into sections that a user might refer to independently.
-- **Actionable Steps**: Each section contains actionable and specific steps for performing tasks related to the script.
-
-Make sure to update the README with any specific paths, dependency details, or internal procedures relevant to your environment or organization. Adjust the troubleshooting section based on common issues observed or anticipated with the deployment of the script.
-
