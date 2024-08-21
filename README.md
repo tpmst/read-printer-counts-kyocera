@@ -28,10 +28,11 @@ This PowerShell script is designed to retrieve SNMP data from networked printers
    - **1:** Copy one of the arrayparts the first is for **COLORPRINTERS** the second for **BLACKANDWHITEPRINTERS** and the third one is for **COLORPRINTERS without SCANNERS**.
      
       ```powersershell
+      #1
       @{ Name = "Name of the Printer"; IPAddress = "IP Address"; ColorPrinter = $true; OIDBlack = @("1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.1.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.1.2", "1.3.6.1.4.1.18334.1.1.1.5.7.2.3.1.12.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.3.1.7.1"); OIDColor =         @("1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.2.2", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.2.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.4.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.3.1.7.1")},
-      ```powershell
+      #2
       @{ Name = "Name of the Printer"; IPAddress = "IP Address"; ColorPrinter = $false ; OIDBlack = "1.3.6.1.4.1.18334.1.1.1.5.7.2.1.1.0"},
-      ```powershell
+      #3
       @{ Name = "Name of the Printer"; IPAddress = "IP Address"; ColorPrinter = $true; OIDBlack = @("1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.1.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.1.2"); OIDColor = @("1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.2.2", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.5.2.1", "1.3.6.1.4.1.18334.1.1.1.5.7.2.2.1.7.2.2")}
    - **2:** Put the arraypart into your script and let it run.
 
